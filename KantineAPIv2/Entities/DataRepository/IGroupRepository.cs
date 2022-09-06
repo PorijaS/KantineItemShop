@@ -1,4 +1,6 @@
-﻿namespace KantineAPIv2.Entities.DataRepository
+﻿using KantineAPIv2.DataModels;
+
+namespace KantineAPIv2.Entities.DataRepository
 {
     public interface IGroupRepository
     {
