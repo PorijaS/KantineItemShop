@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kantine.Templates.ProductsItemTemplate">
+    <ContentView.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="ProductContainerStyle" TargetType="Border">
+                <Setter Property="HeightRequest" Value="150" />
+                <Setter Property="WidthRequest" Value="200" />
+            </Style>
+            
+            
+            <Style x:Key="ProductBorderStyle" TargetType="Border">
+                <Setter Property="StrokeThickness" Value="1" />
+                <Setter Property="Stroke" Value="White" />
+            </Style>
+
+            <Style x:Key="TitleTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontAutoScalingEnabled" Value="True" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Grid
+        Style="{StaticResource ProductContainerStyle}">
+        <Border
+        Style="{StaticResource ProductBorderStyle}">
+            <Border.StrokeShape>
+                <BoxView />
+            </Border.StrokeShape>
+        <Image
+            Source="{Binding SlikImageUrl}"/>
+        </Border>
+        <Label
+            Style="{StaticResource TitleTextStyle}"
+            Text="{Binding SlikName}" />
+   </Grid>
+</ContentView>

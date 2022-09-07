@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Kantine.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Kantine"
+    xmlns:views="clr-namespace:Kantine.Views"
+    xmlns:model="clr-namespace:Kantine.Model"
+    Shell.TabBarIsVisible="False"
+    FlyoutBackgroundColor="#2488ad">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        Route="MainPage" />
+
+
+    <FlyoutItem Route="Menu" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Menu" Icon="{x:Static model:Icons.Menu}" ContentTemplate="{DataTemplate local:Menu}" />
+        <ShellContent Title="Profil" Icon="{x:Static model:Icons.Profil}" ContentTemplate="{DataTemplate views:Profil}" />
+        <ShellContent Title="Kontakt" Icon="{x:Static model:Icons.Kontakt}" ContentTemplate="{DataTemplate views:Kontakt}" />
+    </FlyoutItem>
+
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="20">
+            <Button Text="Log ud" TextColor="White" BackgroundColor="#02425A" />
+        </StackLayout>
+    </Shell.FlyoutFooter>
+
+</Shell>

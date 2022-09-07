@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kantine.Menu"
+             xmlns:viewmodels="clr-namespace:Kantine.ViewModel"
+             xmlns:models="clr-namespace:Kantine.Model"
+             xmlns:templates="clr-namespace:Kantine.Templates"
+             BackgroundColor="{DynamicResource PrimaryColor}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="SectionContainerStyle" TargetType="Grid">
+                <Setter Property="Margin" Value="12, 6" />
+            </Style>
+
+            <Style x:Key="TitleTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <viewmodels:MenuViewModel />
+    </ContentPage.BindingContext>
+    <Grid
+        RowDefinitions="Auto, Auto, *, *">
+        <!-- HEADER -->
+        <Grid
+            ColumnDefinitions="Auto, *, Auto"
+            Style="{StaticResource SectionContainerStyle}">
+            <Label
+                Grid.Column="1"
+                Text="Produkter"
+                Style="{StaticResource TitleTextStyle}"/>
+        </Grid>
+        <!-- SLIK -->
+        <Grid
+            Grid.Row="1"
+            Padding="0, 0">
+            <CollectionView
+                ItemsSource="{Binding Candies}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout 
+                        Orientation="Horizontal"
+                        ItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <templates:CandyItemTemplate />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+        <Grid
+            ColumnDefinitions="Auto, *, Auto"
+            Style="{StaticResource SectionContainerStyle}">
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                Text="Varmt mad"
+                Style="{StaticResource TitleTextStyle}"/>
+        </Grid>
+        <!-- VARMT MAD -->
+        <Grid
+            Grid.Row="2"
+            Padding="0, 0">
+            <CollectionView
+                ItemsSource="{Binding Vms}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout 
+                        Orientation="Horizontal"
+                        ItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <templates:VMItemTemplate />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </Grid>
+</ContentPage>
