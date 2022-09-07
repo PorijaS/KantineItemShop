@@ -5189,7 +5189,8 @@
       "MySql.Data >= 8.0.30",
       "Pomelo.EntityFrameworkCore.MySql >= 6.0.2",
       "Serilog.Sinks.Literate >= 3.0.0",
-      "Swashbuckle.AspNetCore >= 6.4.0"
+      "Swashbuckle.AspNetCore >= 6.4.0",
+      "Swashbuckle.AspNetCore.Swagger >= 6.4.0"
     ]
   },
   "packageFolders": {
@@ -5282,6 +5283,10 @@
             "version": "[3.0.0, )"
           },
           "Swashbuckle.AspNetCore": {
+            "target": "Package",
+            "version": "[6.4.0, )"
+          },
+          "Swashbuckle.AspNetCore.Swagger": {
             "target": "Package",
             "version": "[6.4.0, )"
           }

@@ -28,3 +28,4 @@ namespace KantineAPIv2.Entities
             OrderUserId = orderUserId;
         }
     }
+}

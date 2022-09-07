@@ -1,4 +1,7 @@
-﻿namespace KantineAPIv2.Identity
+﻿using IdentityServer4.Models;
+using IdentityServer4;
+
+namespace KantineAPIv2.Identity
 {
     public class IdentityServerConfig
     {

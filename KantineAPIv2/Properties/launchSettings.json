@@ -4,12 +4,12 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:55717",
+      "applicationUrl": "http://localhost:7949",
       "sslPort": 44383
     }
   },
   "profiles": {
-    "KantineAPIv2": {
+    "KantineAPI": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
