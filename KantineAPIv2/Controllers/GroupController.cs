@@ -7,14 +7,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace KantineAPIv2.Controllers
 {
+    //API Controller for Group
 
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
     public class GroupController : ControllerBase
     {
+        //Creating a _dataRepository reference
         private readonly IGroupRepository _dataRepository;
 
+        //Creating Constructor
         public GroupController(IGroupRepository dataRepository)
         {
             _dataRepository = dataRepository;

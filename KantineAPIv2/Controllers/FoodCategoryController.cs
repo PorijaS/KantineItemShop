@@ -7,20 +7,23 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace KantineAPIv2.Controllers
 {
+    //API Controller for FoodCategory
+
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
     public class FoodCategoryController : ControllerBase
     {
+        //Creating a _dataRepository reference
         private readonly IFoodCategoryRepository _dataRepository;
 
+        //Creating Constructor
         public FoodCategoryController(IFoodCategoryRepository deviceRepository)
         {
             _dataRepository = deviceRepository;
         }
 
         // GET: api/foodCategory
-
         [HttpGet]
         public IActionResult GetAll()
         {

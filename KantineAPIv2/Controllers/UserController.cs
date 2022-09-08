@@ -7,13 +7,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace KantineAPIv2.Controllers
 {
+    //API Controller for Order
+
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class UserController : ControllerBase
     {
+        //Creating a _dataRepository reference
         private readonly IUserRepository _dataRepository;
 
+        //Creating Constructor
         public UserController(IUserRepository deviceRepository)
         {
             _dataRepository = deviceRepository;

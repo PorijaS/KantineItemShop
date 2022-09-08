@@ -9,12 +9,16 @@ namespace KantineAPIv2.Identity
 {
     public class ProfileService : IProfileService
     {
+        //Creating a db context
         private readonly DatabaseContext _dbContext;
 
+        //Adding a class constructor
         public ProfileService(DatabaseContext dbContext)
         {
             _dbContext = dbContext;
         }
+
+        //
         public async Task GetProfileDataAsync(ProfileDataRequestContext context)
         {
             string? subjectValue = context.Subject.FindFirst("sub")?.Value;

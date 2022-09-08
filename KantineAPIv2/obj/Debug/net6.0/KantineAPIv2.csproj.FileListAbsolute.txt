@@ -72,3 +72,10 @@ C:\Users\HFGF\source\repos\KantineAPIv2\KantineAPIv2\obj\Debug\net6.0\refint\Kan
 C:\Users\HFGF\source\repos\KantineAPIv2\KantineAPIv2\obj\Debug\net6.0\KantineAPIv2.pdb
 C:\Users\HFGF\source\repos\KantineAPIv2\KantineAPIv2\obj\Debug\net6.0\KantineAPIv2.genruntimeconfig.cache
 C:\Users\HFGF\source\repos\KantineAPIv2\KantineAPIv2\obj\Debug\net6.0\ref\KantineAPIv2.dll
+C:\Users\HFGF\source\repos\KantineAPIv2\KantineAPIv2\bin\Debug\net6.0\KantineAPIv2.staticwebassets.runtime.json
+C:\Users\HFGF\source\repos\KantineAPIv2\KantineAPIv2\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\HFGF\source\repos\KantineAPIv2\KantineAPIv2\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\HFGF\source\repos\KantineAPIv2\KantineAPIv2\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\HFGF\source\repos\KantineAPIv2\KantineAPIv2\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\HFGF\source\repos\KantineAPIv2\KantineAPIv2\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\HFGF\source\repos\KantineAPIv2\KantineAPIv2\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

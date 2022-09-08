@@ -3,6 +3,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace KantineAPIv2.Entities
 {
+    //Entity Class, modelled after database table
+
     [Table("FoodCategory")]
     public class FoodCategory
     {
