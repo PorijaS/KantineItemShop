@@ -6,22 +6,27 @@
     xmlns:local="clr-namespace:Kantine"
     xmlns:views="clr-namespace:Kantine.Views"
     xmlns:model="clr-namespace:Kantine.Model"
-    Shell.TabBarIsVisible="False"
-    FlyoutBackgroundColor="#2488ad">
+    Shell.TabBarIsVisible="True"
+    Shell.TabBarUnselectedColor="White"
+    Shell.TabBarTitleColor="White"
+    Shell.TabBarForegroundColor="White"
+    Shell.FlyoutBehavior="Disabled">
 
     <ShellContent
-        Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
-        FlyoutItemIsVisible="False"
-        Shell.FlyoutBehavior="Disabled"
         Route="MainPage" />
 
-
-    <FlyoutItem Route="Menu" FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="Menu" Icon="{x:Static model:Icons.Menu}" ContentTemplate="{DataTemplate local:Menu}" />
-        <ShellContent Title="Profil" Icon="{x:Static model:Icons.Profil}" ContentTemplate="{DataTemplate views:Profil}" />
-        <ShellContent Title="Kontakt" Icon="{x:Static model:Icons.Kontakt}" ContentTemplate="{DataTemplate views:Kontakt}" />
-    </FlyoutItem>
+    <TabBar>
+        <Tab Title="Menu" Icon="menu.png">
+            <ShellContent Title="Menu" ContentTemplate="{DataTemplate local:Menu}" Route="Menu" />
+        </Tab>
+        <Tab Title="Profil" Icon="user.png">
+            <ShellContent Title="Profil" ContentTemplate="{DataTemplate views:Profil}" Route="Profil" />
+        </Tab>
+        <Tab Title="Kontakt" Icon="contact.png">
+            <ShellContent Title="Kontakt" ContentTemplate="{DataTemplate views:Kontakt}" Route="Kontakt" />
+        </Tab>
+    </TabBar>
 
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">
