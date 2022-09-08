@@ -16,5 +16,6 @@ namespace KantineAPIv2.Context
         public DbSet<User> Users { get; set; }
         public DbSet<Group> Groups { get; set; }
         public DbSet<FoodCategory> FoodCategories { get; set; }
+        public DbSet<Food> Foods { get; set; }
     }
 }

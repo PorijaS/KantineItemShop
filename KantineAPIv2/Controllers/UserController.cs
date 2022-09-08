@@ -14,12 +14,12 @@ namespace KantineAPIv2.Controllers
     public class UserController : ControllerBase
     {
         //Creating a _dataRepository reference
-        private readonly IUserRepository _dataRepository;
+        private readonly IUserRepository _userRepository;
 
         //Creating Constructor
-        public UserController(IUserRepository deviceRepository)
+        public UserController(IUserRepository userRepository)
         {
-            _dataRepository = deviceRepository;
+            _userRepository = userRepository;
         }
 
         // GET: api/user
@@ -27,7 +27,7 @@ namespace KantineAPIv2.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            IEnumerable<User> users = _dataRepository.GetAll();
+            IEnumerable<User> users = _userRepository.GetAll();
             return Ok(users);
         }
 
@@ -37,7 +37,7 @@ namespace KantineAPIv2.Controllers
 
         public IActionResult Get(long id)
         {
-            User user = _dataRepository.Get(id);
+            User user = _userRepository.Get(id);
             if (user == null)
             {
                 return NotFound("The User was not found");
@@ -54,9 +54,9 @@ namespace KantineAPIv2.Controllers
                 return BadRequest("User is null");
             }
 
-            var userId = _dataRepository.Add(user);
+            var userId = _userRepository.Add(user);
 
-            var result = _dataRepository.Get(userId);
+            var result = _userRepository.Get(userId);
             return Ok(result);
         }
 
@@ -69,13 +69,13 @@ namespace KantineAPIv2.Controllers
                 return BadRequest("User is null");
             }
 
-            User userToUpdate = _dataRepository.Get(id);
+            User userToUpdate = _userRepository.Get(id);
             if (userToUpdate == null)
             {
                 return NotFound("The User was not found ");
             }
 
-            _dataRepository.Update(userToUpdate, user);
+            _userRepository.Update(userToUpdate, user);
             return Ok(user);
         }
 
@@ -84,13 +84,13 @@ namespace KantineAPIv2.Controllers
         [Route("{id}")]
         public IActionResult Delete(long id)
         {
-            User user = _dataRepository.Get(id);
+            User user = _userRepository.Get(id);
 
             if (user == null)
             {
                 return NotFound("The User was not found");
             }
-            _dataRepository.Delete(user);
+            _userRepository.Delete(user);
             return Ok("The User was deleted");
         }
     }

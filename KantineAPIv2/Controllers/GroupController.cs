@@ -15,19 +15,19 @@ namespace KantineAPIv2.Controllers
     public class GroupController : ControllerBase
     {
         //Creating a _dataRepository reference
-        private readonly IGroupRepository _dataRepository;
+        private readonly IGroupRepository _groupRepository;
 
         //Creating Constructor
-        public GroupController(IGroupRepository dataRepository)
+        public GroupController(IGroupRepository groupRepository)
         {
-            _dataRepository = dataRepository;
+            _groupRepository = groupRepository;
         }
 
         // GET: api/groups
         [HttpGet]
         public IActionResult GetAll()
         {
-            IEnumerable<Group> groups = _dataRepository.GetAll();
+            IEnumerable<Group> groups = _groupRepository.GetAll();
             return Ok(groups);
         }
 
@@ -36,7 +36,7 @@ namespace KantineAPIv2.Controllers
         [Route("{id}")]
         public IActionResult Get(long id)
         {
-            Group group = _dataRepository.Get(id);
+            Group group = _groupRepository.Get(id);
             if (group == null)
             {
                 return NotFound("The Group was not found");
@@ -53,9 +53,9 @@ namespace KantineAPIv2.Controllers
                 return BadRequest("Group is null");
             }
 
-            var groupId = _dataRepository.Add(group);
+            var groupId = _groupRepository.Add(group);
 
-            var result = _dataRepository.Get(groupId);
+            var result = _groupRepository.Get(groupId);
             return Ok(result);
         }
         [HttpPut]
@@ -65,14 +65,14 @@ namespace KantineAPIv2.Controllers
             {
                 return BadRequest("Group is null");
             }
-            Group groupToUpdate = _dataRepository.Get(id);
+            Group groupToUpdate = _groupRepository.Get(id);
 
             if (groupToUpdate == null)
             {
                 return NotFound("Group was not found");
             }
 
-            _dataRepository.Update(groupToUpdate, group);
+            _groupRepository.Update(groupToUpdate, group);
             return Ok(group);
         }
 
@@ -81,13 +81,13 @@ namespace KantineAPIv2.Controllers
         [Route("{id}")]
         public IActionResult Delete(long id)
         {
-            Group group = _dataRepository.Get(id);
+            Group group = _groupRepository.Get(id);
 
             if (group == null)
             {
                 return NotFound("The Group was not found");
             }
-            _dataRepository.Delete(group);
+            _groupRepository.Delete(group);
             return Ok("The Group was deleted");
         }
     }

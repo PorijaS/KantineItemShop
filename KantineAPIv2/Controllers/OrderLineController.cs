@@ -15,19 +15,19 @@ namespace KantineAPIv2.Controllers
     public class OrderLineController : ControllerBase
     {
         //Creating a _dataRepository reference
-        private readonly IOrderLineRepository _dataRepository;
+        private readonly IOrderLineRepository _foodCategoryRepository;
 
         //Creating Constructor
-        public OrderLineController(IOrderLineRepository dataRepository)
+        public OrderLineController(IOrderLineRepository foodCategoryRepository)
         {
-            _dataRepository = dataRepository;
+            _foodCategoryRepository = foodCategoryRepository;
         }
 
         // GET: api/orderLine
         [HttpGet]
         public IActionResult GetAll()
         {
-            IEnumerable<OrderLine> orderLines = _dataRepository.GetAll();
+            IEnumerable<OrderLine> orderLines = _foodCategoryRepository.GetAll();
             return Ok(orderLines);
         }
 
@@ -36,7 +36,7 @@ namespace KantineAPIv2.Controllers
         [Route("{id}")]
         public IActionResult Get(long id)
         {
-            OrderLine orderLine = _dataRepository.Get(id);
+            OrderLine orderLine = _foodCategoryRepository.Get(id);
             if (orderLine == null)
             {
                 return NotFound("The orderLine was not found");
@@ -53,9 +53,9 @@ namespace KantineAPIv2.Controllers
                 return BadRequest("OrderLine is null");
             }
 
-            var orderLineId = _dataRepository.Add(orderLine);
+            var orderLineId = _foodCategoryRepository.Add(orderLine);
 
-            var result = _dataRepository.Get(orderLineId);
+            var result = _foodCategoryRepository.Get(orderLineId);
             return Ok(result);
         }
 
@@ -64,13 +64,13 @@ namespace KantineAPIv2.Controllers
         [Route("{id}")]
         public IActionResult Delete(long id)
         {
-            OrderLine orderLine = _dataRepository.Get(id);
+            OrderLine orderLine = _foodCategoryRepository.Get(id);
 
             if (orderLine == null)
             {
                 return NotFound("The OrderLine was not found");
             }
-            _dataRepository.Delete(orderLine);
+            _foodCategoryRepository.Delete(orderLine);
             return Ok("The OrderLine was deleted");
         }
     }

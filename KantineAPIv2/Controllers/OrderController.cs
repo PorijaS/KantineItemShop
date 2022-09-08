@@ -15,12 +15,12 @@ namespace KantineAPIv2.Controllers
     public class OrderController : ControllerBase
     {
         //Creating a _dataRepository reference
-        private readonly IOrderRepository _dataRepository;
+        private readonly IOrderRepository _orderRepository;
 
         //Creating Constructor
-        public OrderController(IOrderRepository deviceRepository)
+        public OrderController(IOrderRepository orderRepository)
         {
-            _dataRepository = deviceRepository;
+            _orderRepository = orderRepository;
         }
 
         // GET: api/order
@@ -28,7 +28,7 @@ namespace KantineAPIv2.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            IEnumerable<Order> orders = _dataRepository.GetAll();
+            IEnumerable<Order> orders = _orderRepository.GetAll();
             return Ok(orders);
         }
 
@@ -38,7 +38,7 @@ namespace KantineAPIv2.Controllers
 
         public IActionResult Get(long id)
         {
-            Order order = _dataRepository.Get(id);
+            Order order = _orderRepository.Get(id);
             if (order == null)
             {
                 return NotFound("The Order was not found");
@@ -55,9 +55,9 @@ namespace KantineAPIv2.Controllers
                 return BadRequest("Order is null");
             }
 
-            var orderId = _dataRepository.Add(order);
+            var orderId = _orderRepository.Add(order);
 
-            var result = _dataRepository.Get(orderId);
+            var result = _orderRepository.Get(orderId);
             return Ok(result);
         }
 
@@ -85,13 +85,13 @@ namespace KantineAPIv2.Controllers
         [Route("{id}")]
         public IActionResult Delete(long id)
         {
-            Order order = _dataRepository.Get(id);
+            Order order = _orderRepository.Get(id);
 
             if (order == null)
             {
                 return NotFound("The Order was not found");
             }
-            _dataRepository.Delete(order);
+            _orderRepository.Delete(order);
             return Ok("The Order was deleted");
         }
     }

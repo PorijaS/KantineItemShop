@@ -35,6 +35,7 @@ builder.Services.AddScoped<IGroupRepository, GroupManager>();
 builder.Services.AddScoped<IFoodCategoryRepository, FoodCategoryManager>();
 builder.Services.AddScoped<IOrderRepository, OrderManager>();
 builder.Services.AddScoped<IOrderLineRepository, OrderLineManager>();
+builder.Services.AddScoped<IFoodRepository, FoodManager>();
 builder.Services.AddSingleton<ICurrentUserService, CurrentUserService>();
 
 Log.Logger = new LoggerConfiguration()
