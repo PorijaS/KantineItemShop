@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kantine.Views.Profil"
-             Title="Profil"
+             xmlns:viewmodels="clr-namespace:Kantine.ViewModel"
+             xmlns:models="clr-namespace:Kantine.Model"
+             xmlns:templates="clr-namespace:Kantine.Templates"
              BackgroundColor="{DynamicResource PrimaryColor}">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -12,7 +14,7 @@
             </Style>
 
             <Style x:Key="TitleTextStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="White" />
+                <Setter Property="TextColor" Value="Black" />
                 <Setter Property="FontSize" Value="24" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="HorizontalOptions" Value="Center" />
@@ -21,5 +23,62 @@
 
         </ResourceDictionary>
     </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <viewmodels:ProfilViewModel />
+    </ContentPage.BindingContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="150" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="300" />
+        </Grid.RowDefinitions>
+        <Grid
+            Grid.Row="1"
+            Padding="15, 0">
+            <CollectionView
+                ItemsSource="{Binding Users}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout 
+                        Orientation="Horizontal"
+                        ItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <templates:UserTemplate />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+        <!-- User -->
+        <Grid
+            Grid.Row="2"
+            Padding="20, 0">
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                Text="Ordre historik:"
+                Style="{StaticResource TitleTextStyle}"
+                HorizontalOptions="Start"/>
+        </Grid>
+        <!-- Orders -->
+        <Grid
+            Grid.Row="3"
+            Padding="0, 0">
+            <CollectionView
+                ItemsSource="{Binding Orders}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout 
+                        Orientation="Vertical"
+                        ItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <templates:OrderTemplate />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </Grid>
 
 </ContentPage>
