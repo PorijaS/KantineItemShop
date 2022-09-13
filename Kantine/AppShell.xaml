@@ -14,17 +14,17 @@
 
     <ShellContent
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        />
 
     <TabBar>
         <Tab Title="Menu" Icon="menu.png">
-            <ShellContent Title="Menu" ContentTemplate="{DataTemplate local:Menu}" Route="Menu" />
+            <ShellContent Title="Menu" ContentTemplate="{DataTemplate local:Menu}" />
         </Tab>
         <Tab Title="Profil" Icon="user.png">
-            <ShellContent Title="Profil" ContentTemplate="{DataTemplate views:Profil}" Route="Profil" />
+            <ShellContent Title="Profil" ContentTemplate="{DataTemplate views:Profil}" />
         </Tab>
         <Tab Title="Kontakt" Icon="contact.png">
-            <ShellContent Title="Kontakt" ContentTemplate="{DataTemplate views:Kontakt}" Route="Kontakt" />
+            <ShellContent Title="Kontakt" ContentTemplate="{DataTemplate views:Kontakt}" />
         </Tab>
     </TabBar>
 

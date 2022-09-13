@@ -34,8 +34,9 @@
             <Border.StrokeShape>
                 <BoxView />
             </Border.StrokeShape>
-            <Image
-            Source="{Binding VMImageUrl}"/>
+            <ImageButton
+            Source="{Binding VMImageUrl}"
+            Clicked="ImageButton_Clicked"/>
         </Border>
         <Label
             Style="{StaticResource TitleTextStyle}"

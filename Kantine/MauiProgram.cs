@@ -17,13 +17,6 @@ public static class MauiProgram
                 fonts.AddFont("Sitka.ttc", "Sitka");
             });
 
-
-        builder.Services.AddTransient<Register>();
-        builder.Services.AddTransient<MainPage>();
-        builder.Services.AddTransient<Menu>();
-        builder.Services.AddTransient<VMItemTemplate>();
-        builder.Services.AddTransient<CandyItemTemplate>();
-
         return builder.Build();
 	}
 }

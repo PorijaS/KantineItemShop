@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<controls:BasePopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kantine.Views.PopupPageVM"
+             xmlns:controls="clr-namespace:Kantine.Controls"
+             xmlns:models="clr-namespace:Kantine.Model"
+             xmlns:viewmodels="clr-namespace:Kantine.ViewModel"
+             Title="PopupPageVM">
+    <controls:BasePopupPage.PopupContent>
+        <StackLayout Spacing="150">
+            <Label Text="{Binding VMName}" FontSize="16" FontAttributes="Bold" TextColor="Black" />
+
+            <Image Source="{Binding VMImageUrl}"/>
+
+            <Label Text="Navigate To Other Popup Page" TextColor="Black">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_NavigateToPopupPageVM" />
+                </Label.GestureRecognizers>
+            </Label>
+            <BoxView BackgroundColor="Black" HeightRequest="1" />
+            <Label Text="Navigate to Page" TextColor="Black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_NavigateToNormalPage" />
+                </Label.GestureRecognizers>
+            </Label>
+            <BoxView BackgroundColor="Black" HeightRequest="1" />
+        </StackLayout>
+    </controls:BasePopupPage.PopupContent>
+</controls:BasePopupPage>
