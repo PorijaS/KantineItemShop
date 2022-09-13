@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kantine.Templates.OrderTemplate">
+    <ContentView.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="ProductContainerStyle" TargetType="Border">
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="WidthRequest" Value="350" />
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+
+
+            <Style x:Key="ProductBorderStyle" TargetType="Border">
+                <Setter Property="StrokeThickness" Value="1" />
+                <Setter Property="Stroke" Value="White" />
+            </Style>
+
+            <Style x:Key="TitleTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAutoScalingEnabled" Value="True" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <HorizontalStackLayout Margin="10" Spacing="10" Style="{StaticResource ProductContainerStyle}" HorizontalOptions="Center">
+            <Label
+            Style="{StaticResource TitleTextStyle}"
+            Text="{Binding Antal}" />
+            <Label
+            Style="{StaticResource TitleTextStyle}"
+            Text="x" />
+            <Label
+            Style="{StaticResource TitleTextStyle}"
+            Text="{Binding Item}" />
+            <Label
+            Style="{StaticResource TitleTextStyle}"
+            Text="|" />
+            <Label
+            Style="{StaticResource TitleTextStyle}"
+            Text="{Binding Pris}"
+            />
+            <Label Style="{StaticResource TitleTextStyle}" Text="kr" />
+    </HorizontalStackLayout>
+</ContentView>
+
