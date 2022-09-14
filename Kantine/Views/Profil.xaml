@@ -29,13 +29,13 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
-            <RowDefinition Height="150" />
+            <RowDefinition Height="200" />
             <RowDefinition Height="50" />
             <RowDefinition Height="300" />
         </Grid.RowDefinitions>
         <Grid
             Grid.Row="1"
-            Padding="15, 0">
+            Padding="5, 0">
             <CollectionView
                 ItemsSource="{Binding Users}">
                 <CollectionView.ItemsLayout>
@@ -53,7 +53,7 @@
         <!-- User -->
         <Grid
             Grid.Row="2"
-            Padding="20, 0">
+            Padding="10, 0">
             <Label
                 Grid.Row="2"
                 Grid.Column="1"

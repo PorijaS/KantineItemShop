@@ -10,7 +10,7 @@
                 <Image Source="sde.png" HorizontalOptions="StartAndExpand"/>
 
                 <StackLayout Margin="0,80">
-                    <Label Style="{StaticResource welcome}" FontSize="32" Text="Velkommen tilbage"/>
+                    <Label Style="{StaticResource welcome}" FontSize="32" Text="Velkommen tilbage" HorizontalOptions="Center"/>
                     <Label HorizontalOptions="Center" FontFamily="OpenSanRegular" TextColor="{StaticResource SecondaryColor}" 
                        FontSize="16" Text="Log ind for at starte"/>
                 </StackLayout>

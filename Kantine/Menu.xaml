@@ -26,9 +26,14 @@
     <ContentPage.BindingContext>
         <viewmodels:MenuViewModel />
     </ContentPage.BindingContext>
-    <Grid
-        RowDefinitions="Auto, Auto, *, *">
-        <!-- HEADER -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <!-- SLIK -->
         <Grid
             ColumnDefinitions="Auto, *, Auto"
             Style="{StaticResource SectionContainerStyle}">
@@ -37,7 +42,6 @@
                 Text="Produkter"
                 Style="{StaticResource TitleTextStyle}"/>
         </Grid>
-        <!-- SLIK -->
         <Grid
             Grid.Row="1"
             Padding="0, 0">
@@ -55,18 +59,18 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </Grid>
+        <!-- VARMT MAD -->
         <Grid
             ColumnDefinitions="Auto, *, Auto"
-            Style="{StaticResource SectionContainerStyle}">
+            Style="{StaticResource SectionContainerStyle}" Grid.Row="2">
+            
             <Label
-                Grid.Row="2"
                 Grid.Column="1"
                 Text="Varmt mad"
                 Style="{StaticResource TitleTextStyle}"/>
         </Grid>
-        <!-- VARMT MAD -->
         <Grid
-            Grid.Row="2"
+            Grid.Row="3"
             Padding="0, 0">
             <CollectionView
                 ItemsSource="{Binding Vms}">
