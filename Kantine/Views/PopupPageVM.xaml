@@ -7,10 +7,10 @@
              xmlns:viewmodels="clr-namespace:Kantine.ViewModel"
              Title="PopupPageVM">
     <controls:BasePopupPage.PopupContent>
-        <StackLayout Spacing="150">
-            <Label Text="{Binding VMName}" FontSize="16" FontAttributes="Bold" TextColor="Black" />
+        <StackLayout Spacing="50">
+            <Label Text="Pølsehorn" FontSize="25" HorizontalOptions="Center" FontAttributes="Bold" TextColor="Black" />
 
-            <Image Source="{Binding VMImageUrl}"/>
+            <Image Source="https://mambeno.dk/wp-content/uploads/2020/04/Klassiske-poelsehorn-scaled.jpg" MaximumHeightRequest="300" MaximumWidthRequest="300"/>
 
             <Label Text="Navigate To Other Popup Page" TextColor="Black">
                 <Label.GestureRecognizers>
@@ -23,6 +23,33 @@
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_NavigateToNormalPage" />
                 </Label.GestureRecognizers>
             </Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="50" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Button
+                Grid.Row="1"
+                Grid.Column="2"
+                Text="-"
+                FontSize="10"
+                HorizontalOptions="Center"
+                BackgroundColor="#02425A"/>
+                <Label Grid.Row="1" Grid.Column="3" HorizontalOptions="Center" Text="2" TextColor="Black"></Label>
+             <Button
+                Grid.Row="1"
+                Grid.Column="4"
+                x:Name="CounterBtn"
+                Text="+"
+                HorizontalOptions="Center"
+                BackgroundColor="#02425A"/>
+            </Grid>
             <BoxView BackgroundColor="Black" HeightRequest="1" />
         </StackLayout>
     </controls:BasePopupPage.PopupContent>

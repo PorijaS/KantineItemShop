@@ -15,6 +15,7 @@
 
             <Style x:Key="TitleTextStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="White" />
+                
                 <Setter Property="FontSize" Value="24" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="HorizontalOptions" Value="Center" />
