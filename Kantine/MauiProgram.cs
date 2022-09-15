@@ -1,4 +1,5 @@
 ﻿using Kantine.Templates;
+using Kantine.ViewModel;
 
 namespace Kantine;
 
@@ -16,6 +17,8 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Bold.ttf", "OpenSansBold");
                 fonts.AddFont("Sitka.ttc", "Sitka");
             });
+		builder.Services.AddSingleton<Basket>();
+		builder.Services.AddSingleton<BasketViewModel>();
 
         return builder.Build();
 	}

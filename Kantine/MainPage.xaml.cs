@@ -1,9 +1,10 @@
-﻿namespace Kantine;
+﻿using Kantine.Model;
+using Kantine.ViewModel;
+
+namespace Kantine;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
-
 	public MainPage()
 	{
 		InitializeComponent();
@@ -16,7 +17,7 @@ public partial class MainPage : ContentPage
 
 	protected void LoginBTN(object sender, EventArgs e)
 	{
-        Shell.Current.Navigation.PushAsync(new Menu());
+        Shell.Current.Navigation.PushAsync(new Basket(new BasketViewModel()));
     }
 }
 

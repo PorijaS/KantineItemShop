@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kantine.Register"
              Title="Register"
-             BackgroundColor="{DynamicResource PrimaryColor}">
+             BackgroundColor="{DynamicResource PrimaryColor}"
+             xmlns:viewmodel="clr-namespace:Kantine.ViewModel"
+             x:DataType="viewmodel:RegisterViewModel">
 
     <ScrollView>
         <Grid>
@@ -21,7 +23,7 @@
                        FontSize="16" Text="Email"/>
                     <Grid Margin="0,5">
                         <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5"/>
-                        <Entry BackgroundColor="Transparent" Placeholder="Indtast email" TextColor="White" Margin="5,0" 
+                        <Entry x:Name="email"  BackgroundColor="Transparent" Placeholder="Indtast email" TextColor="White" Margin="5,0" 
                        PlaceholderColor="LightGrey" />
                     </Grid>
 
@@ -29,7 +31,7 @@
                        FontSize="16" Text="Adgangskode"/>
                     <Grid Margin="0,5">
                         <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5"/>
-                        <Entry BackgroundColor="Transparent" Placeholder="Indtast adgangskode" TextColor="White" Margin="5,0" 
+                        <Entry x:Name="password" BackgroundColor="Transparent" Placeholder="Indtast adgangskode" TextColor="White" Margin="5,0" 
                        PlaceholderColor="LightGrey" IsPassword="True"/>
                     </Grid>
 
@@ -37,7 +39,7 @@
                        FontSize="16" Text="Gentag adgangskode"/>
                     <Grid Margin="0,5">
                         <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5"/>
-                        <Entry BackgroundColor="Transparent" Placeholder="Gentag adgangskode" TextColor="White" Margin="5,0" 
+                        <Entry x:Name="rePass" BackgroundColor="Transparent" Placeholder="Gentag adgangskode" TextColor="White" Margin="5,0" 
                        PlaceholderColor="LightGrey" IsPassword="True"/>
                     </Grid>
                 </StackLayout>
