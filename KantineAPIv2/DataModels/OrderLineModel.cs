@@ -5,5 +5,7 @@
     {
         public long FoodId { get; set; }
         public int Amount { get; set; }
+
+        public long OrderId { get; set; }
     }
 }

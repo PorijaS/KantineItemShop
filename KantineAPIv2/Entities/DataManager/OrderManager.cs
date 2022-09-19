@@ -34,7 +34,7 @@ namespace KantineAPIv2.Entities.DataManager
         //Add function that takes a OrderModel and adds it to the Order table
         public long Add(OrderModel order)
         {
-            var orderEntity = new Order(order.OrderLine, order.OrderDate, order.Price, order.OrderUserId);
+            var orderEntity = new Order(order.OrderDate, order.Price, order.OrderUserId);
             _dbContext.Orders.Add(orderEntity);
             _dbContext.SaveChanges();
 

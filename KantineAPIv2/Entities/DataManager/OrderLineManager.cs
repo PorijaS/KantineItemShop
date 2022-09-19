@@ -34,7 +34,7 @@ namespace KantineAPIv2.Entities.DataManager
         //Add function that takes a OrderLineModel and adds it to the OrderLine table
         public long Add(OrderLineModel orderLine)
         {
-            var orderLineEntity = new OrderLine(orderLine.FoodId, orderLine.Amount);
+            var orderLineEntity = new OrderLine(orderLine.FoodId, orderLine.Amount, orderLine.OrderId);
             _dbContext.OrderLines.Add(orderLineEntity);
             _dbContext.SaveChanges();
 

@@ -13,13 +13,19 @@ namespace KantineAPIv2.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
         public long OrderLineId { get; set; }
+
+        [ForeignKey("Order")]
+        public long OrderId { get; set; }
         public long FoodId { get; set; }
         public int Amount { get; set; }
 
-        public OrderLine(long foodId, int amount)
+
+        public virtual Order Order { get; set; }
+        public OrderLine(long foodId, int amount, long orderId)
         {
             FoodId = foodId;
             Amount = amount;
+            OrderId = orderId;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace KantineAPIv2.Controllers
         }
 
         // GET: api/user
-
+        [Authorize]
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -34,7 +34,7 @@ namespace KantineAPIv2.Controllers
         // GET: api/user/1
         [HttpGet]
         [Route("{id}")]
-
+        [Authorize]
         public IActionResult Get(long id)
         {
             User user = _userRepository.Get(id);
@@ -59,7 +59,7 @@ namespace KantineAPIv2.Controllers
             var result = _userRepository.Get(userId);
             return Ok(result);
         }
-
+        [Authorize]
         // PUT: api/user
         [HttpPut]
         public IActionResult Put(long id, [FromBody] UpdateUserModel user)
@@ -78,7 +78,7 @@ namespace KantineAPIv2.Controllers
             _userRepository.Update(userToUpdate, user);
             return Ok(user);
         }
-
+        [Authorize]
         //Delete: api/user/1
         [HttpDelete]
         [Route("{id}")]

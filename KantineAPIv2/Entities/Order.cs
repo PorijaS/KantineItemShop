@@ -11,8 +11,7 @@ namespace KantineAPIv2.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
-        public int OrderId { get; set; }
-        public long OrderLine { get; set; }
+        public long OrderId { get; set; }
         public DateTime OrderDate { get; set; }
         public float OrderPrice { get; set; }
 
@@ -21,9 +20,8 @@ namespace KantineAPIv2.Entities
 
         public virtual User User { get; set; }
 
-        public Order(long orderLine, DateTime orderDate, float orderPrice, long orderUserId)
+        public Order(DateTime orderDate, float orderPrice, long orderUserId)
         {
-            OrderLine = orderLine;
             OrderDate = orderDate;
             OrderPrice = orderPrice;
             OrderUserId = orderUserId;
