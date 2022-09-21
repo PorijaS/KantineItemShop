@@ -1,0 +1,12 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MonkeyFinder.Platforms.Android.Resources
+{
+    class network_security_config
+    {
+    }
+}
