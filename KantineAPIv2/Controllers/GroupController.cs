@@ -11,7 +11,6 @@ namespace KantineAPIv2.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class GroupController : ControllerBase
     {
         //Creating a _dataRepository reference
